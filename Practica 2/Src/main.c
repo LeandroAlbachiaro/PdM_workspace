@@ -31,6 +31,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
+#define DELAY 100
+
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 /* UART handler declaration */
@@ -74,7 +76,7 @@ int main(void)
 
   /*  Delays */
   delay_t delay_100ms;
-  tick_t duration = 100;
+  tick_t duration = DELAY;
   delayInit(&delay_100ms, duration);
 
   /* Infinite loop */
@@ -85,9 +87,6 @@ int main(void)
 		  BSP_LED_Toggle(LED1);
 		  delayInit(&delay_100ms, duration);
 	  }
-	  /*if(BSP_PB_GetState(BUTTON_USER)){
-		  duration = duration + 50;
-	  }*/
   }
 }
 
